@@ -1,15 +1,22 @@
-let a = [20, 30, 40];
-let b = [10, ...a, 50];
-console.log(b);
-{
-  let a = ['Bob', 'Carol', 'Frank'];
-  let b = ['Mark', 'Sam', 'William', ...a];
-  console.log(b);
-}
+//Structuring assignment
+let z = [4, 5, 6];
+let [four, five] = z;
+console.log(four, five);
 
-function collect(...a) {
-  console.log(a);
-}
+let animals = ["Simba", "Zazu", "Ed"];
+let [lion, bird] = animals;
+console.log(lion, bird);
 
-collect(1, 2, 3, 4, 5);
-collect(3, 6, 9, 77);
+// Structuring assignment on object
+let king = { name: 'Mufasa', wife: 'Sarabi', kids: 1};
+let {name, kids} = king;
+console.log(name, kids);
+
+let son = {sonName: 'Simba', parents: 2};
+let sonName, parents;
+// This won't work, due to block scope
+// Will get Unexpected token error
+
+//Workaround like so: wrap in parens
+({ sonName, parents } = son);
+console.log(sonName, parents);
