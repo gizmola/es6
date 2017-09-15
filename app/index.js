@@ -1,22 +1,29 @@
-//Structuring assignment
-let z = [4, 5, 6];
-let [four, five] = z;
-console.log(four, five);
+/**
+ Function declaration
 
-let animals = ["Simba", "Zazu", "Ed"];
-let [lion, bird] = animals;
-console.log(lion, bird);
+function cheer() {
+  console.log("Woohoo!");
+}
+**/
 
-// Structuring assignment on object
-let king = { name: 'Mufasa', wife: 'Sarabi', kids: 1};
-let {name, kids} = king;
-console.log(name, kids);
+// Anonymous function expression
+var cheer = function cheer() {
+  console.log("Woohoo!");
+}
+cheer();
 
-let son = {sonName: 'Simba', parents: 2};
-let sonName, parents;
-// This won't work, due to block scope
-// Will get Unexpected token error
+setTimeout(function() {
+  console.log("The British are Coming");
+}, 3000);
 
-//Workaround like so: wrap in parens
-({ sonName, parents } = son);
-console.log(sonName, parents);
+//ES6 Arrow Function
+setTimeout(() => {
+  console.log("The British are Still coming");
+}, 3000);
+
+// Arrow function assignment
+let cheer2 = () => {
+  console.log("Go Team Go");
+}
+
+cheer2();
