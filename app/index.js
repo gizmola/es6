@@ -1,29 +1,20 @@
-/**
- Function declaration
+let values = [20, 30, 40];
 
-function cheer() {
-  console.log("Woohoo!");
-}
-**/
-
-// Anonymous function expression
-var cheer = function cheer() {
-  console.log("Woohoo!");
-}
-cheer();
-
-setTimeout(function() {
-  console.log("The British are Coming");
-}, 3000);
-
-//ES6 Arrow Function
-setTimeout(() => {
-  console.log("The British are Still coming");
-}, 3000);
-
-// Arrow function assignment
-let cheer2 = () => {
-  console.log("Go Team Go");
+let double = (n) => {
+  return n*2;
 }
 
-cheer2();
+// Using map
+let doubled = values.map(double);
+console.log(doubled);
+
+// Equivalent to
+let doubled2 = values.map((n) => {
+  return n*2;
+});
+console.log(doubled2);
+
+//Equivalent to
+// Note that return is assumed now
+let doubled3 = values.map((n) => n*2);
+console.log(doubled3);
