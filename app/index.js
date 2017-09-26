@@ -1,15 +1,8 @@
-import Animal from './Animal';
-class Lion extends Animal {
-  constructor(name, height, color) {
-    super(name, height);
-    this.color = color;
-  }
-
-  hello() {
-    console.log(`Hi! I'm ${this.name} from Pride Rock!`);
+class Calculator {
+  static multiply(a, b) {
+    return a*b;
   }
 }
 
-let son = new Lion("Simba", 2, "golden");
-console.log(son);
-son.hello();
+let a = Calculator.multiply(5,7);
+console.log(a);
