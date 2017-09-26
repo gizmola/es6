@@ -1,13 +1,5 @@
-let b = "wooh" + "oo".repeat(20);
-console.log(b);
-
-let c = `woo${"hoo".repeat(4)}`;
-console.log(c);
-
-// Searching
-
-console.log("butterfly".startsWith("Butter"));
-console.log("butterfly".startsWith("butter"));
-console.log("butterfly".endsWith("fly"));
-
-console.log("butterfly".includes("foo"));
+import { fellowship, total } from './fellowship';
+import { add, multiply } from './math';
+console.log(fellowship, total);
+console.log(add(2,3));
+console.log(multiply(2,3));
