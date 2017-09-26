@@ -22,5 +22,5 @@ for (let element of numSet.values()) {
 let chars = 'alkfawerlfuruownslje';
 let chars_arr = chars.split("");
 let chars_set = new Set(chars_arr);
-//Set get only uniques
+//Set get only uni
 console.log(chars_set);
