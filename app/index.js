@@ -1,5 +1,7 @@
-import { fellowship, total } from './fellowship';
-import { add, multiply } from './math';
-console.log(fellowship, total);
-console.log(add(2,3));
-console.log(multiply(2,3));
+const addToCart = (item, number) => {
+  return Number.isFinite(number);
+}
+
+console.log(addToCart('shirt', Infinity));
+
+console.log(addToCart('shirt', Math.pow(2, 54)));
