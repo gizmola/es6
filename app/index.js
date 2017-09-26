@@ -1,22 +1,26 @@
-function Wizard(name, house, pet) {
-  this.name = name;
-  this.house = house;
-  this.pet = pet;
+let a = new Set();
 
-  this.greet = () => `I'm ${this.name} from ${this.house}`;
+a.add(5);
+a.add(43);
+a.add("Greetings");
+a.add({x: 50, y: 200});
 
+console.log(a);
+console.log(a.size);
+console.log(a.has(5));
+console.log(a.has(7));
+
+let numbers = [5, 7, 8, 13, 17];
+let numSet = new Set(numbers);
+console.log(numSet);
+
+//enhanced for loop
+for (let element of numSet.values()) {
+  console.log(element);
 }
 
-Wizard.prototype.pet_name;
-// Won't work: no enclosing object to provide this context
-// Wizard.prototype.info = () => return `I have a ${this.pet} named ${this.pet_name}`;
-
-// Need an actual function
-Wizard.prototype.info = function() {
-  return `I have a ${this.pet} named ${this.pet_name}`;
-}
-
-let harry = new Wizard("Harry Potter", "Gryffindor", "Owl");
-harry.pet_name = "Hedwig";
-console.log(harry);
-console.log(harry.greet());
+let chars = 'alkfawerlfuruownslje';
+let chars_arr = chars.split("");
+let chars_set = new Set(chars_arr);
+//Set get only uniques
+console.log(chars_set);
