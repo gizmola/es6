@@ -1,3 +1,13 @@
-let points = [7, 16, 21, 4, 3, 22, 5];
-let highScores = points.filter((n) => n > 15);
-console.log(highScores);
+let b = "wooh" + "oo".repeat(20);
+console.log(b);
+
+let c = `woo${"hoo".repeat(4)}`;
+console.log(c);
+
+// Searching
+
+console.log("butterfly".startsWith("Butter"));
+console.log("butterfly".startsWith("butter"));
+console.log("butterfly".endsWith("fly"));
+
+console.log("butterfly".includes("foo"));
