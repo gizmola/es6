@@ -1,9 +1,14 @@
-const addToCart = (item, number) => {
-  return Number.isFinite(number);
+class Animal {
+  constructor(name, height) {
+    this.name = name;
+    this.height = height;
+  }
+
+  hello() {
+    console.log(`Hi! I'm ${this.name} from the Animal Kingdom`);
+  }
 }
 
-console.log(addToCart('shirt', Infinity));
-
-console.log(addToCart('shirt', Math.pow(2, 54)));
-
-console.log(Number.isSafeInteger(Math.pow(2, 54)));
+let king = new Animal("Mufasa", 4.5);
+console.log(king);
+king.hello();
