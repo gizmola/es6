@@ -3,9 +3,9 @@ let call = () => {
   let reveal = () => {
     console.log(secret);
   }
-  reveal();
+  return reveal;
 }
-// Can't access secret
-//console.log(secret)
-// But you can still execute it to get at the data in the closure
-call();
+
+// Return a function that includes a closure
+let unveil = call();
+unveil();
