@@ -1,22 +1,10 @@
-let obj = {
-  a: 'one',
-  b: 'two',
-  c: 'three'
+async function async_one() {
+  return 'one';
 }
 
-// Current method
-let keys = Object.keys(obj);
-console.log(keys);
-
-//ES8 access to values
-let values = Object.values(obj);
-console.log(values);
-
-let entries = Object.entries(obj);
-console.log(entries);
-
-// extended for loop example
-
-for (let entry of entries) {
-  console.log(`key: ${entry[0]}, value: ${entry[1]}`);
+async function async_two() {
+  throw new Error('Issue with async!');
 }
+
+async_one().then(response => console.log(response));
+async_two().catch(error => console.log(error));
