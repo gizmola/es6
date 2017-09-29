@@ -1,17 +1,22 @@
-//ES7 - 2016
+let obj = {
+  a: 'one',
+  b: 'two',
+  c: 'three'
+}
 
-let a = Math.pow(2, 5);
-console.log(a);
-//ES7 Syntax
-let b = 2**5;
-console.log(b);
+// Current method
+let keys = Object.keys(obj);
+console.log(keys);
 
-// ES6
-let c = "wonderful".includes("wonder");
-console.log(c);
-c = "wonderful".includes("yoh");
-console.log(c);
+//ES8 access to values
+let values = Object.values(obj);
+console.log(values);
 
-//ES7 Extends includes to arrays
-let d = [2, 3, 4, 5, 6].includes(7);
-console.log(d);
+let entries = Object.entries(obj);
+console.log(entries);
+
+// extended for loop example
+
+for (let entry of entries) {
+  console.log(`key: ${entry[0]}, value: ${entry[1]}`);
+}
