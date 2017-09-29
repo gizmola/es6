@@ -3,8 +3,22 @@ async function async_one() {
 }
 
 async function async_two() {
-  throw new Error('Issue with async!');
+  return 'two';
 }
 
-async_one().then(response => console.log(response));
-async_two().catch(error => console.log(error));
+/*
+async function async_three() {
+  const one = await async_one();
+  console.log(one);
+  const two = await async_two();
+  console.log(two);
+} */
+
+async function async_four() {
+  const [res_one, res_two, res_three] = await Promise.all(
+    [async_one(), async_two()]
+  )
+  console.log(res_one, res_two);
+}
+
+async_four();
