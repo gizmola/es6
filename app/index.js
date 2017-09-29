@@ -1,6 +1,23 @@
-const addFactory = x => y => y + x;
+const budget = () => {
+  let balance = 0;
+  let changeBal = (val) => {
+    return balance += val;
+  }
+  const deposit20 = () => changeBal(20);
+  const withdraw20 = () => changeBal(-20);
+  const check = () => balance;
 
-const add50 = addFactory(50);
-console.log(add50(100));
-const add30 = addFactory(30);
-console.log(add30(75));
+  return {
+    deposit20: deposit20,
+    check: check,
+    withdraw20: withdraw20
+  }
+}
+
+let wallet = budget();
+console.log(wallet);
+wallet.deposit20();
+wallet.deposit20();
+wallet.deposit20();
+wallet.withdraw20();
+console.log(wallet.check());
