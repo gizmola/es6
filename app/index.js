@@ -1,7 +1,17 @@
-function* letterMaker() {
-  yield 'x';
-  yield 'y';
-  yield 'z';
+function* evens() {
+  let count = 0;
+  while(true) {
+    count += 2;
+    let reset = yield count;
+    if (reset) {
+      count = 0;
+    }
+  }
 }
 
-let letterGen = letterMaker();
+let sequence = evens();
+console.log(sequence.next().value);
+console.log(sequence.next().value);
+console.log(sequence.next().value);
+console.log(sequence.next(true).value);
+console.log(sequence.next().value);
