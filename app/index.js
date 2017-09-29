@@ -1,17 +1,32 @@
-function* evens() {
-  let count = 0;
-  while(true) {
-    count += 2;
-    let reset = yield count;
-    if (reset) {
-      count = 0;
+const arrayIterator = (array) => {
+  let index = 0;
+
+  return {
+    next: () => {
+      if (index < array.length) {
+        let next = array[index];
+        index += 1;
+        return next;
+      }
     }
   }
 }
 
-let sequence = evens();
-console.log(sequence.next().value);
-console.log(sequence.next().value);
-console.log(sequence.next().value);
-console.log(sequence.next(true).value);
-console.log(sequence.next().value);
+let it = arrayIterator([1,2,3]);
+console.log(it.next());
+console.log(it.next());
+console.log(it.next());
+console.log(it.next());
+
+
+// Generator Iterator
+function*  arrayIterator2() {
+  for (let arg of arguments) {
+    yield arg;
+  }
+}
+
+var it2 = arrayIterator2(1, 2, 3);
+console.log(it2.next().value);
+console.log(it2.next().value);
+console.log(it2.next().value);
