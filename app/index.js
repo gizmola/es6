@@ -1,24 +1,6 @@
-async function async_one() {
-  return 'one';
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-async function async_two() {
-  return 'two';
-}
-
-/*
-async function async_three() {
-  const one = await async_one();
-  console.log(one);
-  const two = await async_two();
-  console.log(two);
-} */
-
-async function async_four() {
-  const [res_one, res_two, res_three] = await Promise.all(
-    [async_one(), async_two()]
-  )
-  console.log(res_one, res_two);
-}
-
-async_four();
+ReactDOM.render(
+  <div>React Application!</div>, document.getElementById('root')
+);
