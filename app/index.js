@@ -1,5 +1,17 @@
-const root = 'https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699';
+//ES7 - 2016
 
-fetch(root, { method: "GET"})
-  .then(response => response.json())
-  .then(json => console.log(json));
+let a = Math.pow(2, 5);
+console.log(a);
+//ES7 Syntax
+let b = 2**5;
+console.log(b);
+
+// ES6
+let c = "wonderful".includes("wonder");
+console.log(c);
+c = "wonderful".includes("yoh");
+console.log(c);
+
+//ES7 Extends includes to arrays
+let d = [2, 3, 4, 5, 6].includes(7);
+console.log(d);
