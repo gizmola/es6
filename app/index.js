@@ -1,8 +1,7 @@
-let p = new Promise((resolve, reject) => {
-  setTimeout(() => resolve('Resolved promise data'), 5000);
-  //reject('Rejected promise data');
-})
-p.then(response => console.log(response))
-.catch(error => console.log(error));
+// Free json REST server
+// https://jsonplaceholder.typicode.com/
+const root = 'https://jsonplaceholder.typicode.com/posts/1';
 
-console.log('after promise consumption');
+fetch(root, { method: "GET"})
+  .then(response => response.json())
+  .then(json => console.log(json));
