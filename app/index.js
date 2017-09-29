@@ -1,23 +1,25 @@
-const budget = () => {
-  let balance = 0;
-  let changeBal = (val) => {
-    return balance += val;
-  }
-  const deposit20 = () => changeBal(20);
-  const withdraw20 = () => changeBal(-20);
-  const check = () => balance;
+function* letterMaker() {
+  yield 'a';
+  yield 'b';
+  yield 'c';
+}
 
-  return {
-    deposit20: deposit20,
-    check: check,
-    withdraw20: withdraw20
+let letterGen = letterMaker();
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+
+function* countMaker() {
+  let count = 0;
+  while (count < 4) {
+    yield count += 1;
   }
 }
 
-let wallet = budget();
-console.log(wallet);
-wallet.deposit20();
-wallet.deposit20();
-wallet.deposit20();
-wallet.withdraw20();
-console.log(wallet.check());
+let countGen = countMaker();
+
+console.log(countGen.next().value);
+console.log(countGen.next().value);
+console.log(countGen.next().value);
+console.log(countGen.next().value);
